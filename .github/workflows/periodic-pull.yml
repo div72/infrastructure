@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          git remote add upstream <UPSTREAM_URL>
+          git remote add upstream https://codeberg.org/hacettepeoyt/infrastructure
           git pull upstream
           git push origin --all
