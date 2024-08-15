@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          git clone --mirror https://codeberg.org/hacettepeoyt/infrastructure
+          git clone --mirror https://codeberg.org/hacettepeoyt/infrastructure repository
+          cd repository
           git remote add github ${{ github.server_url }}/${{ github.repository }}
           git push --all github
