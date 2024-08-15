@@ -15,5 +15,5 @@ jobs:
       - run: |
           git clone --mirror https://codeberg.org/hacettepeoyt/infrastructure repository
           cd repository
-          git remote add github ${{ github.server_url }}/${{ github.repository }}
+          git remote add github https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git push --all github
