@@ -1,0 +1,19 @@
+---
+name: "Periodic Pull"
+
+on:
+  schedule:
+    - cron: '13 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  periodic-pull:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          git remote add upstream <UPSTREAM_URL>
+          git pull upstream
+          git push origin --all
